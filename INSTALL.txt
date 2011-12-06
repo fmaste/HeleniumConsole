@@ -1,0 +1,10 @@
+
+sudo apt-get install php5-cgi
+sudo a2enmod actions
+
+Apache config:
+	
+	ScriptAlias /local-bin /usr/bin
+	AddHandler application/x-httpd-php5 php
+	Action application/x-httpd-php5 /local-bin/php-cgi
+
