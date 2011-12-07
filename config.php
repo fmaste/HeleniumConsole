@@ -8,7 +8,7 @@ function getTests () {
 	$tests = array();
 	$handler = opendir(HELENIUM_TESTS_DIR);
 	while ($file = readdir($handler)) {
-		if (!is_dir($file) && $file != "." && $file != ".." && substr($file, -2, 2) == "hs") { 
+		if (!is_dir($file) && $file != "." && $file != ".." && substr($file, -3, 3) == ".hs") { 
 			$tests[] = substr($file, 0, strlen($file) - 3);
 		}       
 	}       
