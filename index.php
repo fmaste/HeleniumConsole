@@ -78,7 +78,7 @@ $name = "Welcome to Mastellonium suite";
                 height: auto;min-height: 200px;
             }
             #title{width: 100%;height: 30px; font-weight: bold; font-size: 10px;background:url(img/1x1.png);}
-            .title{width:100px;float:left;text-align: center;text-decoration: none;color:#222;font-size:1.5em;}
+            .title{width:100px;float:left;text-align: center;text-decoration: none;color:#222;font-size:1.5em;line-height: 25px;padding-left: 4px;}
             .larger{}
             li{height:30px;margin:3px;}
 			ul{list-style: none;}
@@ -86,7 +86,7 @@ $name = "Welcome to Mastellonium suite";
 			a:hover{color:#444;opacity: 1;}
 			#testList{width:100%;float:left;}
 			.eachColumn{width:100px;float:left;text-align: center;}
-			.first{}
+			.first{width: 50%;text-align: left;}
 			.eachTest{width:500px;float:left;height: 15px;}
 			#newtest{position: absolute; bottom: 10px; right:10px;}
 
@@ -107,7 +107,7 @@ $name = "Welcome to Mastellonium suite";
 			</div>
             <div id="content">
                 <ul id="title">
-                    <li class="title">Tests</li>
+                    <li class="title first">Tests</li>
                     <li class="title larger">Browsers</li>
                 </ul>
                 <ul id="testList">
