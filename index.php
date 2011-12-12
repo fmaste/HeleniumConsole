@@ -7,12 +7,12 @@ $name = "Welcome to Mastellonium suite";
 	<head>
 		<title><?=$name?></title>
 		<style>
-			*{border:0;padding:0;margin:0;font-size:10px;font-family: helvetica, arial}
+			*{border:0;padding:0;margin:0;font-size:10px;font-family: helvetica, arial;}
 			#container {
-                margin:10px auto;
-                width:900px;height:auto;min-height:600px;
                 position:relative;
-                background: url(img/bg.png)/*-moz-linear-gradient(bottom, rgba(10,100,255,0.65) 0%, rgba(10,100,255,0) 100%)*/;
+                margin:10px auto;
+                width:900px;
+                background: url(img/bg.png);
                 -moz-box-shadow: 6px 6px 10px #000000;
                 border:1px solid #aaa;
             }
@@ -74,8 +74,9 @@ $name = "Welcome to Mastellonium suite";
             #content{
                 padding:10px;
                 margin: 0 0 0 30px;
+                padding-bottom: 30px;
                 width: 91%;
-                height: auto;min-height: 200px;
+                display: table-cell;
             }
             #title{width: 100%;height: 30px; font-weight: bold; font-size: 10px;background:url(img/1x1.png);}
             .title{width:100px;float:left;text-align: center;text-decoration: none;color:#222;font-size:1.5em;line-height: 25px;padding-left: 4px;}
@@ -89,8 +90,6 @@ $name = "Welcome to Mastellonium suite";
 			.first{width: 50%;text-align: left;}
 			.eachTest{width:500px;float:left;height: 15px;}
 			#newtest{position: absolute; bottom: 10px; right:10px;}
-
-
 		</style>
 	</head>
 	<body>
