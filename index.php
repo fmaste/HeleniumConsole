@@ -2,6 +2,7 @@
 require_once "config.php";
 header('Content-type: text/html');
 $name = "Welcome to Mastellonium suite";
+$text = "Esta bueno que a veces haya gente incompetente, indirectamente, ellos son los que impulsan la creatividad en el resto. Esto hace que para remediar deficiencias ajenas, otros deben exceder lo normal y crear, construir, edificar; de esta manera se logra un balance. SON TODOS PUTOS";
 ?>
 <html>
 	<head>
@@ -68,7 +69,7 @@ $name = "Welcome to Mastellonium suite";
                 float:left;width:400px;
             }
             #header p{
-                width: 80%;float:left;margin: 10px 0 0 42px;
+                width: 80%;float:left;margin: 10px 0 0 90px;
                 font-size: 11px;line-height: 14px;
             }
             #content{
@@ -98,10 +99,12 @@ $name = "Welcome to Mastellonium suite";
                 <div id="logo"><span>M</span></div>
 				<h1><?=$name?></h1>
                 <ul id="version">
-                    <li><span>Copyright: </span>Federico Mastellone</li>
+                    <li><span>Made by: </span>Federico Mastellone</li>
+                    <li><span>Design by: </span>Linux Mint</li>
+                    <li><span>Chorized by: </span>Lucas Tettamanti</li>
                     <li><span>Version: </span>0.1</li>
                 </ul>
-                <p>Es ist ein lang erwiesener Fakt, dass ein Leser vom Text abgelenkt wird, wenn er sich ein Layout ansieht. Der Punkt, Lorem Ipsum zu nutzen, ist, dass es mehr oder weniger die normale Anordnung von Buchstaben darstellt und somit nach lesbarer Sprache aussieht.Es ist ein lang erwiesener Fakt, dass ein Leser vom Text abgelenkt wird, wenn er sich ein Layout ansieht. Der Punkt, Lorem Ipsum zu nutzen, ist, dass es mehr oder weniger die normale Anordnung von Buchstaben darstellt und somit nach lesbarer Sprache aussieht.</p>
+                <p><?=$text?></p>
                 <a id="install" href="/install.php">How to Install</a>
 			</div>
             <div id="content">
