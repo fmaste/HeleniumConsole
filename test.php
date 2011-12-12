@@ -2,7 +2,7 @@
 
 require_once "config.php";
 
-header('Content-type: text/plain');
+header('Content-type: text/html');
 
 if (!isset($_REQUEST['test'])) {
 	echo "No test specified!";
