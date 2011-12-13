@@ -2,7 +2,7 @@
 require_once "config.php";
 header('Content-type: text/html');
 $name = "Welcome to Mastellonium suite";
-$text = "Esta bueno que a veces haya gente incompetente, indirectamente, ellos son los que impulsan la creatividad en el resto. Esto hace que para remediar deficiencias ajenas, otros deben exceder lo normal y crear, construir, edificar; de esta manera se logra un balance. SON TODOS PUTOS";
+$text = "Esta bueno que a veces haya gente incompetente, indirectamente, ellos son los que impulsan la creatividad en el resto. Esto hace que para remediar deficiencias ajenas, otros deben exceder lo normal y crear, construir, edificar; de esta manera se logra un balance. Para ir cerrando, si usas IE sos un gil.";
 ?>
 <html>
 	<head>
@@ -14,7 +14,7 @@ $text = "Esta bueno que a veces haya gente incompetente, indirectamente, ellos s
                 margin:10px auto;
                 width:900px;
                 background: url(img/bg.png);
-                -moz-box-shadow: 6px 6px 10px #000000;
+                box-shadow: 6px 6px 10px #000000;
                 border:1px solid #aaa;
             }
             #header {
@@ -25,12 +25,13 @@ $text = "Esta bueno que a veces haya gente incompetente, indirectamente, ellos s
             }
 
             #logo {
-                -moz-box-shadow: 0px 0px 10px #000;
+                box-shadow: 0px 0px 10px #000;
                 margin-top: 10px;
                 border: 10px solid #fff;
                 height: 100px; width: 100px;
                 border-radius: 25px;
                 background: -moz-linear-gradient(bottom, rgba(135,207,62,0.9) 0%, rgba(135,207,62,0) 100%);
+                background: -webkit-gradient(linear,left bottom, left top, from(rgba(135,207,62,0.9)), to(rgba(135,207,62,0)));
                 float:left;
             }
 
@@ -71,25 +72,32 @@ $text = "Esta bueno que a veces haya gente incompetente, indirectamente, ellos s
             #header p{
                 width: 80%;float:left;margin: 10px 0 0 90px;
                 font-size: 11px;line-height: 14px;
+                text-indent: 10px;
             }
             #content{
                 padding:10px;
                 margin: 0 0 0 30px;
                 padding-bottom: 30px;
-                width: 91%;
+                width: 900px;
                 display: table-cell;
             }
+            .eachTest{
+                width:875px;float:left;height: 25px;border:0;margin:0;
+            }
+            .withbg {
+                background: rgba(135,207,62,0.2);
+            }
+
             #title{width: 100%;height: 30px; font-weight: bold; font-size: 10px;background:url(img/1x1.png);}
-            .title{width:100px;float:left;text-align: center;text-decoration: none;color:#222;font-size:1.5em;line-height: 25px;padding-left: 4px;}
+            .title{width:45%;float:left;text-align: center;text-decoration: none;color:#222;font-size:1.5em;line-height: 25px;padding-left: 4px;}
             .larger{}
             li{height:30px;margin:3px;}
 			ul{list-style: none;}
 			a{text-decoration: none;color:#222;font-size:1.5em;}
 			a:hover{color:#444;opacity: 1;}
 			#testList{width:100%;float:left;}
-			.eachColumn{width:100px;float:left;text-align: center;}
-			.first{width: 50%;text-align: left;}
-			.eachTest{width:500px;float:left;height: 15px;}
+			.eachColumn{width:120px;float:left;text-align: center;}
+			.first{width: 45%;text-align: left;}
 			#newtest{position: absolute; bottom: 10px; right:10px;}
 		</style>
 	</head>
@@ -113,8 +121,13 @@ $text = "Esta bueno que a veces haya gente incompetente, indirectamente, ellos s
                     <li class="title larger">Browsers</li>
                 </ul>
                 <ul id="testList">
-                <?php foreach (getTests() as $test) { ?>
-                        <li class="eachTest">
+                <?php
+                    $i = 0;
+                    foreach (getTests() as $test) {
+                        $bg = $i % 2;
+                        $i++;
+                        ?>
+                        <li class="eachTest<?=$bg ? " withbg" : ""?>">
                             <ul class="eachRow">
                                 <li class="eachColumn first"><a href="<?="/edit.php?test=".$test?>"><?=$test?></a></li>
                             <?php foreach (getTestEnvironments() as $envKey => $env) { ?>
