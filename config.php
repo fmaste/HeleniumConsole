@@ -64,19 +64,25 @@ function getTestEnvironments () {
 	$local = "http://" . $_SERVER["REMOTE_ADDR"] . ":4444/wd/hub";
 
 	# Browsers
+	$ie = "ie";
 	$firefox = "firefox";
 	$chrome = "chrome";
 
 	return array(
-		"local_firefox" => array(
+		"local_firefox" => array (
 			"name" => "Firefox",
 			"server" => $local,
 			"browser" => $firefox
 		),
-		"local_chrome" => array(
+		"local_chrome" => array (
 			"name" => "Chrome",
 			"server" => $local,
 			"browser" => $chrome
+		),
+		"local_ie" => array (
+			"name" => "Internet Explorer",
+			"server" => $local,
+			"browser" => $ie
 		),
 	);
 }
