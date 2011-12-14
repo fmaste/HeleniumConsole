@@ -87,17 +87,20 @@ $text = "Esta bueno que a veces haya gente incompetente, indirectamente, ellos s
             .withbg {
                 background: rgba(135,207,62,0.2);
             }
-
-            #title{width: 100%;height: 30px; font-weight: bold; font-size: 10px;background:url(img/1x1.png);}
+            .eachColumn{
+                width:120px;float:left;
+                text-align: center;
+            }
+            #title{width: 100%;height: 30px; font-weight: bold; font-size: 10px;background: rgba(0,0,0,0.1);}
             .title{width:45%;float:left;text-align: center;text-decoration: none;color:#222;font-size:1.5em;line-height: 25px;padding-left: 4px;}
             .larger{}
             li{height:30px;margin:3px;}
 			ul{list-style: none;}
-			a{text-decoration: none;color:#222;font-size:1.5em;}
-			a:hover{color:#444;opacity: 1;}
+			a{text-decoration: none;color:#222;font-size:1.5em;display: block; border-radius: 15px;padding-left: 5px;padding-right: 5px;-moz-transition: opacity 1s ease 0s;}
+			a:hover{color:#444;opacity: 1;-webkit-transition: opacity 1s;box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.1) inset, 0 0 10px rgba(255, 255, 255, 0.898)}
 			#testList{width:100%;float:left;}
-			.eachColumn{width:120px;float:left;text-align: center;}
 			.first{width: 45%;text-align: left;}
+            .first a{padding-left:10px;}
 			#newtest{position: absolute; bottom: 10px; right:10px;}
 		</style>
 	</head>
