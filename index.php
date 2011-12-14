@@ -96,7 +96,7 @@ $text = "Esta bueno que a veces haya gente incompetente, indirectamente, ellos s
             .larger{}
             li{height:30px;margin:3px;}
 			ul{list-style: none;}
-			a{text-decoration: none;color:#222;font-size:1.5em;display: block; border-radius: 15px;padding-left: 5px;padding-right: 5px;-moz-transition: opacity 1s ease 0s;}
+			a{text-decoration: none;color:#222;font-size:1.5em;display: block; border-radius: 15px;padding-left: 5px;padding-right: 5px;outline: none;}
 			a:hover{color:#444;opacity: 1;-webkit-transition: opacity 1s;box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.1) inset, 0 0 10px rgba(255, 255, 255, 0.898)}
 			#testList{width:100%;float:left;}
 			.first{width: 45%;text-align: left;}
