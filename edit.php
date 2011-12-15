@@ -6,22 +6,23 @@ header('Content-type: text/html');
 
 if (!isset($_REQUEST['test'])) {
 	echo "No test specified!";
+	exit ();
 } else {
 	$test = $_REQUEST['test'];
 	if (!isTestNameValid($test) || !testExists($test)) {
 		echo "Not a valid tests.";
-		exit();
+		exit ();
 	}
 	if (isset($_REQUEST["code"])) {
 		saveTestCode($test, $_REQUEST["code"]);
 	}
-?>
+} ?>
 <html>
 	<head>
 		<script type="text/javascript" charset="utf-8" src="js/jquery.min.js"></script>
-		<script type="text/javascript" charset="utf-8" src="js/ace.js"></script>
-		<script type="text/javascript" charset="utf-8" src="js/theme-vibrant_ink.js"></script>
-		<script type="text/javascript" charset="utf-8" src="js/mode-javascript.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/ace/ace.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/ace/theme-vibrant_ink.js"></script>
+		<script type="text/javascript" charset="utf-8" src="js/ace/mode-javascript.js"></script>
 	</head>
 	<body>
 		<a href="/">All tests</a>
@@ -31,6 +32,7 @@ if (!isset($_REQUEST['test'])) {
 			<input type="submit" value="Save" />
 			<div id="editor" style="height: 800px; width: 900px"><?php echo getTestCode ($test); ?></div>
 		</form>
+		<!-- iframe src="/commands.php" width="800" height="200"></iframe -->
 		<script>
 			window.onload = function() {
 				window.aceEditor = ace.edit("editor");
@@ -53,5 +55,4 @@ if (!isset($_REQUEST['test'])) {
 		</script>
 	</body>
 </html>
-<?php }
 
