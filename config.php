@@ -3,6 +3,7 @@
 define ("HELENIUM_DIR", "../helenium");
 define ("HELENIUM_TESTS_DIR", HELENIUM_DIR . "/src/Test");
 define ("HELENIUM_TEST_TEMPLATE", HELENIUM_TESTS_DIR . "/Google.hs");
+define ("HELENIUM_DOCS_COMMANDS", HELENIUM_DIR . "/doc/Helenium.html");
 
 function getTests () {
 	$tests = array();
@@ -85,5 +86,9 @@ function getTestEnvironments () {
 			"browser" => $ie
 		),
 	);
+}
+
+function getCommandsPage () {
+	return file_get_contents (HELENIUM_DOCS_COMMANDS);
 }
 
