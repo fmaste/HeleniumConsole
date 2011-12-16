@@ -14,7 +14,7 @@ header('Content-type: text/html');
 	</br>
 	Download the latest <a target="_blank" href="http://code.google.com/p/chromium/downloads/list">chromedriver</a> for your architecture.
 	</br>
-	Run with: java -jar -Dwebdriver.chrome.driver=PATH_TO_CHROMEDRIVER PATH_TO_SELENIUM
+	Run with: java -jar -Dwebdriver.chrome.driver=<strong>path_to_chromedriver</strong> <strong>path_to_selenium</strong>
 	</body>
 </html>
 
