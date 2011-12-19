@@ -10,11 +10,12 @@ header('Content-type: text/html');
 	</br>
 	To use it:
 	</br>
-	Download the latest <a target="_blank" href="http://code.google.com/p/selenium/downloads/list">selenium-server-standalone-*.jar</a> 
+	git clone git://github.com/fmaste/HeleniumClient.git helenium-client
 	</br>
-	Download the latest <a target="_blank" href="http://code.google.com/p/chromium/downloads/list">chromedriver</a> for your architecture.
+	cd helenium-client
 	</br>
-	Run with: java -jar -Dwebdriver.chrome.driver=<strong>path_to_chromedriver</strong> <strong>path_to_selenium</strong>
+	./run.sh
+	</br>
 	</body>
 </html>
 
