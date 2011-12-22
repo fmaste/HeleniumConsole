@@ -1,13 +1,13 @@
 <?php
 
-define ("HELENIUM_DIR", "../helenium");
-define ("HELENIUM_TESTS_DIR", HELENIUM_DIR . "/src/Test");
-define ("HELENIUM_TEST_TEMPLATE", HELENIUM_TESTS_DIR . "/Google.hs");
+define ("HELENIUM_DIR", "/home/sites/helenium");
+define ("HELENIUM_TESTS_DIR", "/home/sites/helenium-tests/current");
+define ("HELENIUM_TEST_TEMPLATE", HELENIUM_TESTS_DIR . "/Tests/Google.hs");
 define ("HELENIUM_DOCS_COMMANDS", HELENIUM_DIR . "/doc/Helenium.html");
 
 function getTests () {
 	$tests = array();
-	$handler = opendir(HELENIUM_TESTS_DIR);
+	$handler = opendir(HELENIUM_TESTS_DIR . "/Tests");
 	while ($file = readdir($handler)) {
 		if (!is_dir($file) && $file != "." && $file != ".." && substr($file, -3, 3) == ".hs") { 
 			$tests[] = substr($file, 0, strlen($file) - 3);
@@ -45,7 +45,7 @@ function deleteTest ($test) {
 }
 
 function getTestPath ($test) {
-	return HELENIUM_TESTS_DIR . "/" . $test . ".hs";
+	return HELENIUM_TESTS_DIR . "/Tests/" . $test . ".hs";
 }
 
 function getTestCode ($test) {
@@ -86,6 +86,18 @@ function getTestEnvironments () {
 			"browser" => $ie
 		),
 	);
+}
+
+function runTest ($test, $environmentKey) {
+	$envs = getTestEnvironments();
+	$env = $envs[$environmentKey];
+	$serverParam = "--server=" . $env["server"];
+	$browserParam = "--browser=" . $env["browser"];
+        $command = 
+		"sudo -u federico /home/sites/helenium/runtest.sh " . 
+		HELENIUM_TESTS_DIR . " Tests." . $test . " " . 
+		$serverParam . " " . $browserParam . " 2>&1";
+	passthru($command, $output);
 }
 
 function getCommandsPage () {
