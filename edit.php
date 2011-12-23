@@ -32,7 +32,6 @@ if (!isset($_REQUEST['test'])) {
 			<input type="submit" value="Save" />
 			<div id="editor" style="height: 800px; width: 900px"><?php echo getTestCode ($test); ?></div>
 		</form>
-		<!-- iframe src="/commands.php" width="800" height="200"></iframe -->
 		<script>
 			window.onload = function() {
 				window.aceEditor = ace.edit("editor");
