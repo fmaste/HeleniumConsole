@@ -1,0 +1,3 @@
+[submodule "jsMVC"]
+	path = jsMVC
+	url = git@github.com:fmaste/jsMVC.git
