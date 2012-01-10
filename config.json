@@ -1,0 +1,86 @@
+{
+	"debug": false,
+	"model": {
+		"prefix": "model",
+		"suffix": ".php"
+	},
+	"view": {
+		"prefix": "views/",
+		"suffix": ".html",
+		"delayMin": 1000,
+		"delayMax": 2000
+	},
+	"style": {
+		"prefix": "css/",
+		"suffix": ".css",
+		"globals": [
+			"index"
+		],
+		"delayMin": 1000,
+		"delayMax": 2000
+	},
+	"image": {
+		"prefix": "images/",
+		"preload": [
+			"spinner.gif"
+		],
+		"delayMin": 1000,
+		"delayMax": 2000
+	},
+	"translation": {
+		"prefix": "translations/",
+		"suffix": ".json",
+		"globals": [
+			"index"
+		]
+	},
+	"library": {
+		"local": {
+			"prefix": "lib/",
+			"files": [
+			]
+		},
+		"external": {
+			"sources": [
+			]
+		}
+	},
+	"source": {
+		"prefix": "src/",
+		"suffix": ".js"
+	},
+	"controller": {
+		"application": {
+			"prefix": "",
+			"suffix": ".js",
+			"delayMin": 1000,
+			"delayMax": 1000
+		},
+		"view": {
+			"prefix": "controllers/",
+			"suffix": ".js",
+			"delayMin": 3000,
+			"delayMax": 4000
+		}
+	},
+	"packs": {
+	},
+	"analytics" : {
+	},
+	"social": {
+		"facebook": {
+			"appId": "123456789",
+			"autoLoad": false,
+			"cookie": false,
+			"logging": true,
+			"session": null,
+			"status": true,
+			"xfbml": false,
+			"channelUrl": null
+		},
+		"twitter": {
+		}
+	},
+	"OAuth": {
+	}
+}

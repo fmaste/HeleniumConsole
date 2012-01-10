@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8"></meta>
+		<noscript>
+			<!-- TODO: Create the content on the server! -->
+			<meta http-equiv="refresh" content="0;url=main.php"></meta>
+		</noscript>
+		<!-- Better performance: Put styles on top. -->
+		<title></title>
+	</head>
+	<body>
+		<div id="jsMVC">
+		</div>
+	</body>
+	<!-- Better performance: Put scripts on the bottom. -->
+	<script type="text/javascript" src="/include/jsMVC/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="/include/jsMVC/jsMVC.js"></script>
+	<script type="text/javascript">
+		//<![CDATA[
+			// Config will be parsed and application "main" will be loaded.
+			jsMVC.init("", "#jsMVC", "main", []);
+		//]]>
+	</script>
+</html>
+
