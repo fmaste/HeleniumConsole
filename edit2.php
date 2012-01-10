@@ -19,8 +19,8 @@ if (!isset($_REQUEST['test'])) {
 } ?>
 <html>
 	<head>
-		<link rel="stylesheet" href="css/codemirror/codemirror.css">
-		<link rel="stylesheet" href="css/codemirror/night.css">
+		<link rel="stylesheet" href="include/codemirror/css/codemirror.css">
+		<link rel="stylesheet" href="include/codemirror/css/night.css">
 		<style type="text/css">
 			.CodeMirror {
 				border: 1px solid #eee;
@@ -33,8 +33,8 @@ if (!isset($_REQUEST['test'])) {
 			}
 		</style>
 		<script type="text/javascript" charset="utf-8" src="js/jquery.min.js"></script>
-		<script type="text/javascript" charset="utf-8" src="js/codemirror/codemirror.js"></script>
-		<script type="text/javascript" charset="utf-8" src="js/codemirror/mode/haskell.js"></script>
+		<script type="text/javascript" charset="utf-8" src="include/codemirror/js/codemirror.js"></script>
+		<script type="text/javascript" charset="utf-8" src="include/codemirror/mode/haskell.js"></script>
 	</head>
 	<body>
 		<a href="/">All tests</a>
