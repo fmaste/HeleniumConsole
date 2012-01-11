@@ -1,5 +1,5 @@
 jsMVC.controller.view.Class({
-	className: "tests",
+	className: "testsList",
 	parentName: ""
 },function() {
 

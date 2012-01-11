@@ -18,8 +18,8 @@ jsMVC.controller.view.Class({
 			done(function (environments) {
 				jsMVC.render(
 					"#content", 
-					"tests", 
-					"tests", 
+					"testsList", 
+					"testsList", 
 					[tests, environments]
 				);
 			}).fail(function () {
