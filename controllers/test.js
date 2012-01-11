@@ -3,19 +3,19 @@ jsMVC.controller.view.Class({
 	parentName: ""
 },function() {
 
-	var tesName = null;
-	var environments = null;
+	this.testName = null;
+	this.environments = null;
 
 	this.init = function (testNameP, environmentsP) {
-		testName = testNameP;
-		environments = environmentsP;
+		this.testName = testNameP;
+		this.environments = environmentsP;
 	}
 
 	this.onLoad = function () {
-		var href = "/edit.php?test=" + testName;
-		this.view.find("a").html(testName).attr("href", href);
-		for (var key in environments) {
-			var environment = environments[key];
+		var href = "/edit.php?test=" + this.testName;
+		this.view.find("a").html(this.testName).attr("href", href);
+		for (var key in this.environments) {
+			var environment = this.environments[key];
 			var appended = jQuery('<li class="eachColumn"></li>').
 				appendTo(this.view);
 			jsMVC.render(
@@ -23,7 +23,7 @@ jsMVC.controller.view.Class({
 				"environment", 
 				null,
 				"environment", 
-				[testName, key, environment.name]
+				[this.testName, key, environment.name]
 			);
 		}
 	}
