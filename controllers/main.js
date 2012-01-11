@@ -19,6 +19,7 @@ jsMVC.controller.view.Class({
 				jsMVC.render(
 					"#content", 
 					"testsList", 
+					null,
 					"testsList", 
 					[tests, environments]
 				);

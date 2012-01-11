@@ -23,7 +23,7 @@ jsMVC.controller.view.Class({
 			}
 			appended = jQuery('<ul class="eachRow"></ul>').
 				appendTo(appended);
-			jsMVC.render(appended, "test", "test", [test, environments]);
+			jsMVC.render(appended, "test", null, "test", [test, environments]);
 		}
 	}
 
