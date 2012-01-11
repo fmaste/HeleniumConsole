@@ -49,7 +49,7 @@ $text = "Esta bueno que a veces haya gente incompetente, indirectamente, ellos s
                 font-size: 1em;
             }
 
-            h1{
+            #header h1{
                 text-align:left;
                 font-size: 2.5em;
                 margin:0 0 10px 40px;
