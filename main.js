@@ -7,7 +7,7 @@ jsMVC.controller.application.Class({
 
 	this.getTitle = function () {
 		// This text will be used as page title.
-		return "jsMVC";
+		return "Mastellonium";
 	}
 
 	this.getFavIcon = function () {
