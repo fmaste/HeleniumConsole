@@ -7,13 +7,6 @@ jsMVC.controller.view.Class({
 	}
 
 	this.onLoad = function () {
-		jsMVC.render(
-			"#content", 
-			"testsList", 
-			null,
-			"testsList", 
-			[]
-		);
 	}
 
 });
