@@ -24,7 +24,6 @@ jsMVC.controller.application.Class({
 	}
 
 	this.onLoad = function () {
-		jsMVC.render(this.view, "main");
 	}
 
 });
