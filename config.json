@@ -14,7 +14,6 @@
 		"prefix": "css/",
 		"suffix": ".css",
 		"globals": [
-			"index"
 		],
 		"delayMin": 1000,
 		"delayMax": 2000
