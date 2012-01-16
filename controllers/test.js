@@ -12,7 +12,7 @@ jsMVC.controller.view.Class({
 	}
 
 	this.onLoad = function () {
-		var href = "/edit.php?test=" + this.testName;
+		var href = "/edit.html?test=" + this.testName;
 		this.view.find("a").html(this.testName).attr("href", href);
 		for (var key in this.environments) {
 			var environment = this.environments[key];
