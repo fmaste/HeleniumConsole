@@ -24,6 +24,10 @@ jsMVC.controller.application.Class({
 	}
 
 	this.onLoad = function () {
+		var header = jQuery('<div id="header"></div>').appendTo(this.view);
+		jsMVC.render(header, "header", "header");
+		var testsList = jQuery('<div id="content"></div>').appendTo(this.view);
+		jsMVC.render(testsList, "testsList", null, "testsList");
 	}
 
 });
