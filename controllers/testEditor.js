@@ -20,9 +20,9 @@ jsMVC.controller.view.Class({
 
 	this.process = function (testCode) {
 		jQuery("#editor").html(testCode);
-		jsMVC.library.load("js/ace/ace.js", true);
-		jsMVC.library.load("js/ace/theme-vibrant_ink.js", true);
-		jsMVC.library.load("js/ace/mode-javascript.js", true);
+		jsMVC.library.load("include/ace/ace.js", true);
+		jsMVC.library.load("include/ace/theme-vibrant_ink.js", true);
+		jsMVC.library.load("include/ace/mode-javascript.js", true);
 		that.aceEditor = ace.edit("editor");
 		that.aceEditor.setTheme("ace/theme/vibrant_ink");
 		document.getElementById('editor').style.fontSize='12px';
