@@ -5,6 +5,8 @@ jsMVC.controller.application.Class({
 	this.init = function () {
 	}
 
+	this.styles = ["index"]
+
 	this.getPageName = function () {
 		return "main";
 	}
