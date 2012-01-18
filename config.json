@@ -13,8 +13,6 @@
 	"style": {
 		"prefix": "css/",
 		"suffix": ".css",
-		"globals": [
-		],
 		"delayMin": 1000,
 		"delayMax": 2000
 	},

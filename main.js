@@ -5,6 +5,29 @@ jsMVC.controller.application.Class({
 	this.init = function () {
 	}
 
+	this.styles = ["index"]
+
+	this.pages = [
+		{
+			"scheme": "http",
+			"domain": "",
+			"port": "",
+			"path": "",
+			"query": "",
+			"fragment": "",
+			"page": "main"
+		},
+		{
+			"scheme": "http",
+			"domain": "",
+			"port": "",
+			"path": "",
+			"query": "",
+			"fragment": "",
+			"page": ""
+		}
+	]
+
 	this.getPageName = function () {
 		return "main";
 	}
