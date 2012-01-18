@@ -12,8 +12,8 @@ jsMVC.controller.application.Class({
 			"scheme": /http/,
 			"domain": /.*/,
 			"port": /.*/,
-			"path": /\//,
-			"query": /^$/,
+			"path": /^\/$/,
+			"query": {},
 			"fragment": /^$/,
 			"page": "main"
 		},
@@ -22,7 +22,9 @@ jsMVC.controller.application.Class({
 			"domain": /.*/,
 			"port": /.*/,
 			"path": /\/edit.html/,
-			"query": /.*/,
+			"query": {
+				"test": /.?/
+			},
 			"fragment": /.*/,
 			"page": "edit"
 		}
