@@ -9,32 +9,24 @@ jsMVC.controller.application.Class({
 
 	this.pages = [
 		{
-			"scheme": "http",
-			"domain": "",
-			"port": "",
-			"path": "",
-			"query": "",
-			"fragment": "",
+			"scheme": /http/,
+			"domain": /.*/,
+			"port": /.*/,
+			"path": /\//,
+			"query": /^$/,
+			"fragment": /^$/,
 			"page": "main"
 		},
 		{
-			"scheme": "http",
-			"domain": "",
-			"port": "",
-			"path": "",
-			"query": "",
-			"fragment": "",
-			"page": ""
+			"scheme": /http/,
+			"domain": /.*/,
+			"port": /.*/,
+			"path": /\/edit.html/,
+			"query": /.*/,
+			"fragment": /.*/,
+			"page": "edit"
 		}
 	]
-
-	this.getPageName = function () {
-		return "main";
-	}
-
-	this.getPageParams = function () {
-		return [];
-	}
 
 	this.getLanguageCode = function () {
 		return "en-US";
