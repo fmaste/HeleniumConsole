@@ -5,14 +5,12 @@ jsMVC.controller.application.Class({
 	this.init = function () {
 	}
 
-	this.getTitle = function () {
-		// This text will be used as page title.
-		return "Mastellonium";
+	this.getPageName = function () {
+		return "main";
 	}
 
-	this.getFavIcon = function () {
-		// The file name of the favicon image.
-		return "favicon.png";
+	this.getPageParams = function () {
+		return [];
 	}
 
 	this.getLanguageCode = function () {
@@ -24,7 +22,6 @@ jsMVC.controller.application.Class({
 	}
 
 	this.onLoad = function () {
-		jsMVC.render(this.view, "main");
 	}
 
 });
