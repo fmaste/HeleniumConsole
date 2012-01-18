@@ -5,7 +5,7 @@ jsMVC.controller.application.Class({
 	this.init = function () {
 	}
 
-	this.styles = ["index"]
+	this.styles = []
 
 	this.pages = [
 		{

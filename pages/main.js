@@ -5,6 +5,8 @@ jsMVC.controller.page.Class({
 	this.init = function () {
 	}
 
+	this.styles = ["index"]
+
 	this.getTitle = function () {
 		// This text will be used as page title.
 		return "Mastellonium";
