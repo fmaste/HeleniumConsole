@@ -7,17 +7,16 @@ jsMVC.controller.application.Class({
 
 	this.styles = []
 
-	this.pages = [
-		{
+	this.pages = {
+		"main": {
 			"scheme": /http/,
 			"domain": /.*/,
 			"port": /.*/,
 			"path": /^\/$/,
 			"query": {},
-			"fragment": /^$/,
-			"page": "main"
+			"fragment": /^$/
 		},
-		{
+		"edit": {
 			"scheme": /http/,
 			"domain": /.*/,
 			"port": /.*/,
@@ -25,10 +24,9 @@ jsMVC.controller.application.Class({
 			"query": {
 				"test": /.?/
 			},
-			"fragment": /.*/,
-			"page": "edit"
+			"fragment": /.*/
 		}
-	]
+	}
 
 	this.getLanguageCode = function () {
 		return "en-US";
