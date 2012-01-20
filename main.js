@@ -25,6 +25,17 @@ jsMVC.controller.application.Class({
 				"test": /.?/
 			},
 			"fragment": /.*/
+		},
+		"run": {
+			"scheme": /http/,
+			"domain": /.*/,
+			"port": /.*/,
+			"path": /\/run.html/,
+			"query": {
+				"test": /.?/,
+				"env": /.?/
+			},
+			"fragment": /.*/
 		}
 	}
 

@@ -14,7 +14,7 @@ jsMVC.controller.view.Class({
 	}
 
 	this.onLoad = function () {
-		var href = "/test.php?test=" + test +"&env=" + environment;
+		var href = "/run.html?test=" + test +"&env=" + environment;
 		this.view.find("a").html(environmentName).attr("href", href);
 	}
 
