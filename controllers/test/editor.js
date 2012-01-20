@@ -1,5 +1,5 @@
 jsMVC.controller.view.Class({
-	className: "testEditor",
+	className: "test.editor",
 	parentName: ""
 },function() {
 
