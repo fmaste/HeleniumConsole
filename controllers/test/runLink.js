@@ -1,5 +1,5 @@
 jsMVC.controller.view.Class({
-	className: "environment",
+	className: "test.runLink",
 	parentName: ""
 },function() {
 

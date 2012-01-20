@@ -20,9 +20,9 @@ jsMVC.controller.view.Class({
 				appendTo(this.view);
 			jsMVC.render(
 				appended, 
-				"environment", 
+				"test.runLink", 
 				null,
-				"environment", 
+				"test.runLink", 
 				[this.testName, key, environment.name]
 			);
 		}
