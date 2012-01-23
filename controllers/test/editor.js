@@ -3,19 +3,15 @@ jsMVC.controller.view.Class({
 	parentName: ""
 },function() {
 
-	var that = null;
 	this.testName = null;
-	this.getTestCode = null;
 	this.aceEditor = null;
 
 	this.init = function () {
-		that = this;
 		this.testName = jsMVC.utils.getUrlParameter("test");
-		this.getTestCode = jQuery.ajax("/model/getTestCode.php?test=" + this.testName);
 	}
 
 	this.onLoad = function () {
-		jQuery.when(this.getTestCode).done(this.process);
+		this.get("/model/getTestCode.php", {test: this.testName}).done(this.process);
 	}
 
 	this.process = function (testCode) {
@@ -23,28 +19,29 @@ jsMVC.controller.view.Class({
 		jsMVC.library.load("include/ace/ace.js", true);
 		jsMVC.library.load("include/ace/theme-vibrant_ink.js", true);
 		jsMVC.library.load("include/ace/mode-javascript.js", true);
-		that.aceEditor = ace.edit("editor");
-		that.aceEditor.setTheme("ace/theme/vibrant_ink");
+		this.aceEditor = ace.edit("editor");
+		this.aceEditor.setTheme("ace/theme/vibrant_ink");
 		document.getElementById('editor').style.fontSize='12px';
-		that.aceEditor.setHighlightActiveLine(true);
-		that.aceEditor.setShowPrintMargin(false);
-		that.aceEditor.setReadOnly(false);
+		this.aceEditor.setHighlightActiveLine(true);
+		this.aceEditor.setShowPrintMargin(false);
+		this.aceEditor.setReadOnly(false);
 		var JavaScriptMode = require("ace/mode/javascript").Mode;
-		that.aceEditor.getSession().setMode(new JavaScriptMode());
+		this.aceEditor.getSession().setMode(new JavaScriptMode());
 		var line = jsMVC.utils.getUrlParameter("line") / 1;
 		if (line > 0) {
-			that.aceEditor.gotoLine(line);
+			this.aceEditor.gotoLine(line);
 		}
-		jQuery("#saveTestButton").click(that.saveTest);
+		var that = this;
+		jQuery("#saveTestButton").click(function () {
+			that.saveTest.call(that);
+		});
 	};
 
 	this.saveTest = function () {
-		var code = that.aceEditor.getSession().getValue();
-		jQuery.ajax("/model/saveTestCode.php", {
-			data: {
-				test: that.testName, 
-				code: code
-			}
+		var code = this.aceEditor.getSession().getValue();
+		this.post("/model/saveTestCode.php", {
+			test: this.testName, 
+			code: code
 		});
 	};
 

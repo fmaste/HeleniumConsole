@@ -2,10 +2,12 @@
 
 require_once "../config.php";
 
-header('Content-type: text/json');
+header('Content-type: application/json');
 
-$test = $_REQUEST["test"];
-$code = $_REQUEST["code"];
+$data = json_decode(file_get_contents("php://input"), true);
+$json = $data["json"];
+$test = $json["test"];
+$code = $json["code"];
 
 if (isTestNameValid($test)) {
 	saveTestCode ($test, $code);
