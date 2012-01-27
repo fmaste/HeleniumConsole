@@ -49,4 +49,10 @@ Create an apache config file on /etc/apache2/sites-enabled like this:
 
 Follow the installation of Hellenium.
 Give permissions to the apache user to execute hellenium/runtest.sh
+For example in sudoers:
+	# Allow apache lo run a Helenium tests
+	User_Alias APACHE_USER = www-data
+	Runas_Alias RUN_USER = user
+	Cmnd_Alias RUN_SCRIPT = /vbox/helenium/runtest.sh
+	APACHE_USER ALL = (RUN_USER) NOPASSWD: RUN_SCRIPT
 
