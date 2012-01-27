@@ -1,10 +1,52 @@
+How to install on a new Ubuntu server:
 
-sudo apt-get install php5-cgi
+sudo apt-get install apache2 php5 php5-cgi
 sudo a2enmod actions
 
-Apache config:
-	
-	ScriptAlias /local-bin /usr/bin
-	AddHandler application/x-httpd-php5 php
-	Action application/x-httpd-php5 /local-bin/php-cgi
+Create an apache config file on /etc/apache2/sites-enabled like this:
+
+<VirtualHost *:80>
+	ServerName HeleniumConsole
+	ServerAlias 172.16.0.2 HeleniumConsole.com www.HeleniumConsole.com
+	ServerAdmin fmaste@gmail.com
+
+	<Directory />
+		Options None
+		AllowOverride None
+		Order Deny,Allow
+		Deny from all
+	</Directory>
+
+	DocumentRoot /vbox/helenium-console
+	<Directory /vbox/helenium-console>
+		Options FollowSymLinks 
+		AllowOverride None
+		Order Allow,Deny
+		Allow from all
+	</Directory>
+
+	ScriptAlias /cgi-bin /usr/lib/cgi-bin
+	AddHandler application/x-httpd-php5 .php
+	Action application/x-httpd-php5 /cgi-bin/php5
+	<Directory /usr/lib/cgi-bin>
+		AllowOverride None
+		Options +ExecCGI
+		Order allow,deny
+		Allow from all
+	</Directory>
+
+	DirectoryIndex index.html
+
+	ErrorLog ${APACHE_LOG_DIR}/helenium-console-error.log
+
+	# Possible values include: debug, info, notice, warn, error, crit,
+	# alert, emerg.
+	LogLevel warn
+
+	CustomLog ${APACHE_LOG_DIR}/helenium-console-access.log combined
+
+</VirtualHost>
+
+Follow the installation of Hellenium.
+Give permissions to the apache user to execute hellenium/runtest.sh
 
