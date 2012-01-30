@@ -3,8 +3,17 @@ How to install on a new Ubuntu server:
 sudo apt-get install apache2 php5 php5-cgi
 sudo a2enmod actions
 
-Create an apache config file on /etc/apache2/sites-enabled like this:
+Create a mastellonium user to run the tests as.
+Follow the installation of Hellenium (remember that is for the mastellonium user).
+Give permissions to the apache user to execute hellenium/runtest.sh
+For example in sudoers:
+	# Allow apache to run a Helenium tests
+	User_Alias APACHE_USER = www-data
+	Runas_Alias RUN_USER = mastellonium
+	Cmnd_Alias RUN_SCRIPT = /var/www/helenium/runtest.sh
+	APACHE_USER ALL = (RUN_USER) NOPASSWD: RUN_SCRIPT
 
+Create an apache config file on /etc/apache2/sites-enabled like this:
 <VirtualHost *:80>
 	ServerName HeleniumConsole
 	ServerAlias 172.16.0.2 HeleniumConsole.com www.HeleniumConsole.com
@@ -17,9 +26,9 @@ Create an apache config file on /etc/apache2/sites-enabled like this:
 		Deny from all
 	</Directory>
 
-	DocumentRoot /vbox/helenium-console
-	<Directory /vbox/helenium-console>
-		Options FollowSymLinks 
+	DocumentRoot /var/www/helenium-console
+	<Directory /var/www>
+		Options FollowSymLinks
 		AllowOverride None
 		Order Allow,Deny
 		Allow from all
@@ -46,13 +55,4 @@ Create an apache config file on /etc/apache2/sites-enabled like this:
 	CustomLog ${APACHE_LOG_DIR}/helenium-console-access.log combined
 
 </VirtualHost>
-
-Follow the installation of Hellenium.
-Give permissions to the apache user to execute hellenium/runtest.sh
-For example in sudoers:
-	# Allow apache lo run a Helenium tests
-	User_Alias APACHE_USER = www-data
-	Runas_Alias RUN_USER = user
-	Cmnd_Alias RUN_SCRIPT = /vbox/helenium/runtest.sh
-	APACHE_USER ALL = (RUN_USER) NOPASSWD: RUN_SCRIPT
 

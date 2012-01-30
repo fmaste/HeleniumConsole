@@ -1,8 +1,8 @@
 <?php
 
-define ("HELENIUM_DIR", "/home/mastellonium/helenium");
-define ("HELENIUM_TESTS_DIR", "/home/mastellonium/helenium-tests/current");
-define ("HELENIUM_TEST_TEMPLATE", HELENIUM_TESTS_DIR . "/Test/Google.hs");
+define ("HELENIUM_DIR", "/var/www/helenium");
+define ("HELENIUM_TESTS_DIR", "/var/www/helenium-tests/current");
+define ("HELENIUM_TEST_TEMPLATE", "/var/www/helenium-tests/Google.hs");
 define ("HELENIUM_DOCS_COMMANDS", HELENIUM_DIR . "/doc/Helenium.html");
 
 function getTests () {
@@ -94,7 +94,7 @@ function runTest ($test, $environmentKey) {
 	$serverParam = "--server=" . $env["server"];
 	$browserParam = "--browser=" . $env["browser"];
         $command = 
-		"sudo -u mastellonium /home/mastellonium/helenium/runtest.sh " . 
+		"sudo -u mastellonium " . HELENIUM_DIR . "/runtest.sh " . 
 		HELENIUM_TESTS_DIR . " Test." . $test . " " . 
 		$serverParam . " " . $browserParam . " 2>&1";
 	passthru($command, $output);
